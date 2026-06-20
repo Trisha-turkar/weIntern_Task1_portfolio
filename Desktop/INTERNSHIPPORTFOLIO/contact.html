@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - Trisha Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#0f172a;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 8%;
+    position:relative;
+}
+
+/* GLOW EFFECTS */
+
+.glow1{
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#38bdf8;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.15;
+    left:-100px;
+    top:0;
+    animation:float1 7s ease-in-out infinite;
+}
+
+.glow2{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#2563eb;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.15;
+    right:-100px;
+    bottom:0;
+    animation:float2 8s ease-in-out infinite;
+}
+
+@keyframes float1{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(40px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes float2{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-40px);}
+    100%{transform:translateY(0);}
+}
+
+/* MAIN BOX */
+
+.contact-container{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    position:relative;
+    z-index:10;
+}
+
+/* LEFT */
+
+.contact-left{
+    padding:30px;
+    animation:slideLeft 1s ease;
+}
+
+.contact-left h1{
+    font-size:55px;
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.contact-left p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+    padding:15px;
+    background:rgba(255,255,255,.05);
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    transition:.4s;
+}
+
+.info:hover{
+    transform:translateX(10px);
+    background:rgba(56,189,248,.15);
+}
+
+.icon{
+    font-size:28px;
+}
+
+.info h4{
+    margin-bottom:5px;
+}
+
+
+.info p{
+    margin:0;
+    color:#94a3b8;
+}
+
+/* SOCIAL */
+
+.social{
+    margin-top:30px;
+}
+
+.social a{
+    text-decoration:none;
+    color:#38bdf8;
+    margin-right:20px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.social a:hover{
+    color:white;
+}
+
+/* RIGHT */
+
+.contact-right{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 0 30px rgba(56,189,248,.15);
+    animation:slideRight 1s ease;
+}
+
+.contact-right h2{
+    font-size:35px;
+    margin-bottom:25px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid rgba(255,255,255,.2);
+    color:white;
+    padding:15px 5px;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:120px;
+    resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#38bdf8;
+}
+
+.contact-form button{
+    width:200px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#38bdf8,#2563eb);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.contact-form button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(56,189,248,.5);
+}
+
+/* ANIMATIONS */
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.contact-left h1{
+    font-size:40px;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<h2 class="logo">Trisha.Turkar</h2>
+
+<ul class="nav-links">
+<li><a href="portfolio.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section">
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<div class="contact-container">
+
+<!-- LEFT SIDE -->
+
+<div class="contact-left">
+
+<h1>Contact Me</h1>
+
+<p>
+Let's work together and create amazing projects.
+Feel free to contact me for collaborations,
+internships, freelance work, or any opportunities.
+</p>
+
+<div class="info">
+<div class="icon">📍</div>
+<div>
+<h4>Location</h4>
+<p>India</p>
+</div>
+</div>
+
+<div class="info">
+<div class="icon">📧</div>
+<div>
+<h4>Email</h4>
+<p>trishaturkar@gmail.com</p>
+</div>
+</div>
+
+<div class="info">
+<div class="icon">📞</div>
+<div>
+<h4>Phone</h4>
+<p>+9322953492</p>
+</div>
+</div>
+
+<div class="social">
+<a href="https://github.com/Trisha-turkar" target="_blank">
+    GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/trisha-turkar-1489" target="_blank">
+    LinkedIn
+</a>
+
+<a href="https://www.instagram.com/trishaturkar_66/" target="_blank">
+    Instagram
+</a>
+
+</div>
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="contact-right">
+
+<h2>Get In Touch</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Enter Your Name" required>
+
+<input type="email" placeholder="Enter Your Email" required>
+
+<input type="text" placeholder="Subject" required>
+
+<textarea placeholder="Write Your Message"></textarea>
+
+<button type="submit">
+Send Message →
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
